@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+
+# Environment & secrets (keep .env.example files)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# PHP / CodeIgniter runtime
+writable/cache/*
+!writable/cache/index.html
+writable/logs/*
+!writable/logs/index.html
+writable/session/*
+!writable/session/index.html
+writable/uploads/*
+!writable/uploads/index.html
+writable/debugbar/*
+!writable/debugbar/index.html
+
+# User uploads (keep folder structure)
+threadx/backend/public/uploads/**/*
+!threadx/backend/public/uploads/**/.gitkeep
+threadx-api/public/uploads/**/*
+!threadx-api/public/uploads/**/.gitkeep
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.log
+Thumbs.db
+Desktop.ini
+
+# Misc local notes
+php spark serve*.txt
