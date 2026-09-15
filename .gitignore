@@ -40,3 +40,6 @@ Desktop.ini
 
 # Misc local notes
 php spark serve*.txt
+
+# TypeScript build cache
+*.tsbuildinfo
