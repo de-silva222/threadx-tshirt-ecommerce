@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #FF6B00;
+  --accent-hover: #FF8533;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: white;
+}
+
+.font-display {
+  letter-spacing: -0.02em;
+}
+
+.tag-corner {
+  position: relative;
+}
+.tag-corner::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  border-top: 1.5px dashed rgba(0,0,0,0.25);
+  border-left: 1.5px dashed rgba(0,0,0,0.25);
+  pointer-events: none;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 bg-ink text-paper px-7 py-3.5 text-sm font-semibold uppercase tracking-widest2 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-accent active:translate-y-0;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 border border-ink text-ink px-7 py-3.5 text-sm font-semibold uppercase tracking-widest2 transition-colors duration-200 hover:bg-ink hover:text-paper;
+}
+.btn-accent {
+  @apply inline-flex items-center justify-center gap-2 bg-accent text-white px-7 py-3.5 text-sm font-semibold uppercase tracking-widest2 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0;
+}
+.btn-accent:hover {
+  background-color: var(--accent-hover);
+}
+
+.img-luxury-frame {
+  border-radius: 1.25rem;
+  box-shadow:
+    0 18px 40px -18px rgba(10, 10, 10, 0.35),
+    0 8px 24px -10px color-mix(in srgb, var(--accent) 30%, transparent);
+  transition: box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.img-luxury-frame:hover {
+  box-shadow:
+    0 28px 56px -18px rgba(10, 10, 10, 0.4),
+    0 14px 36px -10px color-mix(in srgb, var(--accent) 45%, transparent);
+  transform: translateY(-6px);
+}
+.img-luxury-frame-sm {
+  border-radius: 0.75rem;
+  box-shadow:
+    0 10px 24px -12px rgba(10, 10, 10, 0.3),
+    0 4px 14px -6px color-mix(in srgb, var(--accent) 25%, transparent);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+.img-luxury-frame-sm:hover {
+  box-shadow:
+    0 16px 32px -12px rgba(10, 10, 10, 0.35),
+    0 6px 18px -6px color-mix(in srgb, var(--accent) 40%, transparent);
+  transform: translateY(-3px);
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12;
+}
+
+.section-label {
+  @apply text-xs font-semibold uppercase tracking-widest2 text-ink/50;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .img-luxury-frame, .img-luxury-frame-sm { transition: none; }
+  .img-luxury-frame:hover, .img-luxury-frame-sm:hover { transform: none; }
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
